@@ -102,7 +102,7 @@ void main() {
   print("Quatation");
 
   String e1 = "Welco\tme to Prog\nramming ";
-
+  print(e1);
   String q = "Hello world,Computer ";
   // When you need text that spans multiple lines,
   // use triple quotes — either ''' or """.
@@ -133,12 +133,14 @@ void main() {
   // {?} Used to safely access a property or method only if the object is not null.Otherwise
   // Error: Non-nullable variable 'p1' must be assigned before it can be used
   String? p1;
-  //p1 = "hello";
+  String? p10;
+  p1 = "hello";
   // Without ?., this would crash:
   //print(p1.length);
   // ?. → Null-aware access operator
   // So ?. prevents your program from crashing by stopping the access if the value is null.
-  print(p1?.length);
+  print(p1.length);
+  print(p10);
   // ?? → Null-coalescing operator
   // Returns the right-hand value if the left-hand side is null.
   String? p2;
