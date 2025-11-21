@@ -20,9 +20,10 @@ class Constructor {
 
 // Inheritance
 class dog {
+  int? a;
   void name() {
     int a = 10;
-    print("sony");
+    print("sony $a");
   }
 }
 
@@ -54,15 +55,48 @@ class electrical extends engineer {
   }
 }
 
+// Getter and Setter
+class getter {
+  int _a = 100;
+  void get a => _a;
+}
+
+class setter extends getter {
+  set a(int value) {
+    if (value >= 19)
+      _a = value;
+    else
+      print("less than 18");
+  }
+// ✔ Setter can only set, not get
+// ✔ Getter returns the value
+// ✔ Overriding both keeps child behavior consistent
+// ✔ Without getter, parent getter will run → unexpected results
+  @override
+  int get a => _a;
+}
+
 void main() {
+  // Class
   check c = check();
   c.name = "welcome";
   c.age = 25;
   c.test();
+  // Constructor Class
   Constructor c1 = Constructor("joel", 21);
   print(c1.age);
+  // Inheritance
   cat m = cat();
   m.name();
+  // Method Overiding
   electrical e = electrical();
   e.job();
+  // Getters and Setters
+  getter g = getter();
+  print(g._a);
+  setter s = setter();
+  print(s._a);
+  s.a = 14;
+  s.a = 20;
+  print(s.a);
 }
